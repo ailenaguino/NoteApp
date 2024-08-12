@@ -10,6 +10,7 @@ import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.SideEffect
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
@@ -37,6 +38,15 @@ private val LightColorScheme = lightColorScheme(
     */
 )
 
+private val DarkColorPalette = darkColorScheme(
+    primary = Color.White,
+    background = DarkGray,
+    onBackground = Color.White,
+    surface = LightBlue,
+    onSurface = DarkGray
+)
+
+
 @Composable
 fun NoteAppTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
@@ -62,8 +72,13 @@ fun NoteAppTheme(
         }
     }
 
-    MaterialTheme(
+    /*MaterialTheme(
         colorScheme = colorScheme,
+        typography = Typography,
+        content = content
+    )*/
+    MaterialTheme(
+        colorScheme = DarkColorPalette,
         typography = Typography,
         content = content
     )
